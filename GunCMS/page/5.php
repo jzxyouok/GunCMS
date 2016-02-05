@@ -44,6 +44,7 @@
 	
 	
 ?>
+<body class="textc" style="background:#CCC;">
 
 <h2><span><?=WEBNAME?></span>总销售情况</h2>
 <?php 
@@ -99,3 +100,5 @@
 	}
 ?>
 </table>
+
+</body>

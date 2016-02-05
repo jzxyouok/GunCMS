@@ -1,3 +1,5 @@
+<body class="textc" style="background:#CCC;">
+
 <h2><span><?=WEBNAME?></span>²É¹ºÈë¿â</h2>
 <div class="info textc">
 
@@ -54,3 +56,4 @@
         <p style="margin-top:25px;">
         	<?=$echo1?>
         </p>
+</body>

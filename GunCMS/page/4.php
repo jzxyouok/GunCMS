@@ -1,5 +1,5 @@
-<body>
-<p style="background:#CCC;">
+<body class="textc" style="background:#CCC;">
+<p>
 备份需知：</br>
 系统备份，备份的是数据库文件。</br>
 sql文件将被保存为当前文件夹下的：日期+mydatabase.sql。</br>
@@ -22,3 +22,4 @@ sql文件将被保存为当前文件夹下的：日期+mydatabase.sql。</br>
 
 	}
 ?>
+</body>

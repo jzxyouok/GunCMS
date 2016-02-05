@@ -40,7 +40,7 @@
 		$a=array('采购入库','供货出库','出入库表单查询统计','货物查询统计','系统备份','管理员资料');
 		if($_SESSION['islogin'] == 1){
 			for($i=0;$i<6;$i++){
-				echo '<li>&raquo; <a href="home.php?id='.$i.'">'.$a[$i].'</a></li>';		
+				echo '<li><a href="home.php?id='.$i.'">'.$a[$i].'</a></li>';		
 			}
 		}
 	}

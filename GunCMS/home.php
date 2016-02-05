@@ -21,17 +21,74 @@
 <head Cache-control="no-cache">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title><?php echo constant('WEBNAME') ?></title>
-<link href="/img/css.css" rel="stylesheet" type="text/css" />
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+//获取URL参数
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+
+//根据参数给导航栏的<li>激活active
+$(document).ready(function () {
+	pageid = GetQueryString("id");
+	var li = document.getElementsByTagName('li');
+	if(null == pageid){
+		$(li[0]).attr("class","active");
+	}else{
+		if(pageid < 4){
+			$(li[pageid]).attr("class","active");
+		}else if(pageid == 4 || pageid == 5){
+			$(li[4]).attr("class","active");
+		}
+	}
+});
+</script>
+
 </head>
 
 <body class="textc">
 <p>
 	<strong><?php echo 欢迎.$_SESSION['name']."登陆!" ?></strong>
 </p>
-<ul class="topmenu">
-	<strong>贴心导航:</strong><?php menu() ?>
+<nav class="navbar navbar-inverse" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="./">枪支管理</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li><a href="home.php?id=0">采购入库</a></li>
+		 <li  id='page1'><a href="home.php?id=1">供货出库</a></li>
+         <li><a href="home.php?id=2">出入库表单查询统计</a></li>
+		 <li><a href="home.php?id=3">货物查询统计</a></li>
+		 
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               系统管理 
+               <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="home.php?id=4">系统备份</a></li>
+               <li><a href="home.php?id=5">管理员资料</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+<!--
+<ul class="nav nav-pills">
+	<li class="active"><a href="./">Home</a></li>
+	<?php menu() ?>
 </ul>
 <br/>
+-->
 <div class="hbox center">
 <?php
 	if($_SESSION['islogin'] == 1){

@@ -31,9 +31,9 @@
 	//·ÖÒ³º¯Êý
 	$page = $_GET['page'];
 ?>
+<body class="textc" style="background:#CCC;">
 
 <table>
-<body class="textc" style="background:#CCC;">
 <form action="" method="post">
 <div class="loginbox center">
 	<tr>
@@ -113,3 +113,5 @@
 	}
 ?>
 </table>
+
+</body>
